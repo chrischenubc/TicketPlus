@@ -172,7 +172,7 @@ public class MySQLConnection implements DBConnection {
 	@Override
 	public List<Item> searchItems(double lat, double lon, String term) {
 		TicketMasterClient client = new TicketMasterClient();
-		List<Item> items = client.search(lat, lon, null);
+		List<Item> items = client.search(lat, lon, term);
 		for (Item item: items) {
 			saveItem(item);
 		}
